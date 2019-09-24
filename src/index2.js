@@ -31,18 +31,18 @@ let uniforms = {
 let audio, analyser;
 const fftSize = 2048;  // https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize
 const frequencyRange = {
-    bass: [20, 140],
-    lowMid: [140, 400],
-    mid: [400, 2600],
-    highMid: [2600, 5200],
-    treble: [5200, 14000],
+    bass: [20, 400],
+    lowMid: [400, 2600],
+    mid: [2600, 5200],
+    highMid: [5200, 14000],
+    treble: [14000, 16000],
 };
 
 const init = () => {
     document.body.classList.add(classNameForLoading);
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x2d40f8);
+    scene.background = new THREE.Color(0x000000);
 
     renderer = new THREE.WebGLRenderer();
     document.getElementById("content").appendChild(renderer.domElement);
@@ -112,7 +112,7 @@ const initAudio = () => {
 
     const audioLoader = new THREE.AudioLoader();
     // https://www.newgrounds.com/audio/listen/872056
-    audioLoader.load('asset/872056_Above-the-clouds.mp3', (buffer) => {
+    audioLoader.load('asset/emergentbehavior_draft2.wav', (buffer) => {
         document.body.classList.remove(classNameForLoading);
 
         audio.setBuffer(buffer);
@@ -160,7 +160,7 @@ const createParticles = () => {
     const colors = [];
 
     let colorsPerFace = [
-        "#ff4b78", "#16e36d", "#162cf8", "#2016e3"
+        "#fff433", "#fff433", "#9b59d0", "#9b59d0"
     ];
 
     let count = 0;
