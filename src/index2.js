@@ -76,7 +76,7 @@ const initCamera = () => {
     const aspect = width / height;
 
     camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 10000);
-    camera.position.set(0, 0, 900);
+    camera.position.set(0, 0, 1000);
     camera.lookAt(0, 0, 0);
 
     scene.add(camera);
