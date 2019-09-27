@@ -26,7 +26,7 @@ const init = () => {
     document.body.classList.add(classNameForLoading);
 
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x111111);
+    scene.background = new THREE.Color(0x000000);
 
     renderer = new THREE.WebGLRenderer();
     document.getElementById("content").appendChild(renderer.domElement);
@@ -207,9 +207,9 @@ const draw = (t) => {
 
     // video
     if (particles) {
-        particles.material.color.r = 1 - r;
-        particles.material.color.g = 1 - g;
-        particles.material.color.b = 1 - b;
+        particles.material.color.r = 3 - r;
+        particles.material.color.g = 0.5 - g;
+        particles.material.color.b = 0.1 - b;
 
         const density = 2;
         const useCache = parseInt(t) % 2 === 0;  // To reduce CPU usage.
