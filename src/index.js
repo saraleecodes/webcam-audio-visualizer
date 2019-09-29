@@ -207,9 +207,9 @@ const draw = (t) => {
 
     // video
     if (particles) {
-        particles.material.color.r = 3 - r;
-        particles.material.color.g = 0.5 - g;
-        particles.material.color.b = 0.1 - b;
+        particles.material.color.r = 1.5 - r;
+        particles.material.color.g = 0 - g;
+        particles.material.color.b = .5 - b;
 
         const density = 2;
         const useCache = parseInt(t) % 2 === 0;  // To reduce CPU usage.
